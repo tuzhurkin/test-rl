@@ -46,8 +46,9 @@
 
     &__content {
         background-color: $greyLight;
-        position: relative;
+        border-radius: 8px; //
         overflow: hidden; //
+        position: relative;
 
         width: 100%;
         height: 100%;
