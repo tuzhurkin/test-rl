@@ -12,6 +12,7 @@
         @include md {
             display: flex;
             flex-direction: column;
+            gap: 0;
         }
     }
 
@@ -59,6 +60,7 @@
         }
         @include sm {
             width: 100%;
+            padding: calc($mobHeaderHeight + 32px) 0 32px;
         }
     }
     &__title {

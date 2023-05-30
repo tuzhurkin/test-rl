@@ -411,6 +411,7 @@ body {
   .hero__wrapper {
     display: flex;
     flex-direction: column;
+    gap: 0;
   }
 }
 .hero__image-box {
@@ -491,6 +492,7 @@ body {
 @media (max-width: 767.5px) {
   .hero__block {
     width: 100%;
+    padding: 88px 0 32px;
   }
 }
 .hero__title {
