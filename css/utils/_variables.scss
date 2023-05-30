@@ -1,0 +1,46 @@
+// default colors
+$black: #000000;
+$white: #FFFFFF;
+
+// light / dark / main / regular / primary / medium / sub / alt / extra / ultra / super / title / text / bg
+$blackMain: #404040;
+$blackSecondary: #636C81;
+$greyMiddle: #E2E8F0;
+$greyLight: #F3F6FB;
+$purple: #5A30F0;
+
+// overlay
+$overlay: rgba(0, 0, 0, 0.5);
+$overlayHover: rgba(0, 0, 0, 0.1);
+$overlayTransparent: rgba(0, 0, 0, 0);
+
+// font
+$fontMain: 'TT Travels', Helvetica, Arial, sans-serif;
+$fontSizeMain: 16px;
+$lineHeightMain: 140%;
+$fontWeightMain: 400;
+
+// containers' max-width / padding
+$maxWidth: 1440px;
+$paddingSide_xxxl: 80px;
+$paddingSide: 60px;
+$paddingSide_xl: 40px;
+$paddingSide_lg: 32px;
+$paddingSide_md: 24px;
+$paddingSide_sm: 16px;
+
+// header's heights
+$headerHeight: 70px;
+$mobHeaderHeight: 56px;
+
+// easings
+$ease: cubic-bezier(0.165, 0.84, 0.44, 1);
+$easeOut: cubic-bezier(0.23, 1, 0.32, 1);
+$easeInOut: cubic-bezier(0.45, 0.34, 0.5, 1);
+$bounceOut: cubic-bezier(0.11, 0.42, 0.3, 1.57);
+
+$easeOut-1: cubic-bezier(0.215, 0.61, 0.355, 1);
+$easeIn-1: cubic-bezier(0.645, 0.045, 0.355, 1);
+
+$easeOut-3: cubic-bezier(0.37, 0.01, 0, 0.98);
+$easeIn-3: cubic-bezier(0.85, 0, 0.15, 1);

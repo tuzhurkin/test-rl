@@ -1,0 +1,340 @@
+// >>> CONTAINERS' MAX-WIDTH LIMIT <<<
+@mixin maxWidth {
+    max-width: $maxWidth;
+    @media screen and (min-width: $maxWidth) {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+// >>> CONTAINERS' SIDE PADDINGS <<<
+@mixin paddingSide {
+    padding-left: $paddingSide;
+    padding-right: $paddingSide;
+
+    @include xxxlm {
+        padding-left: $paddingSide_xxxl;
+        padding-right: $paddingSide_xxxl;
+    }
+    
+    @include xl {
+        padding-left: $paddingSide_xl;
+        padding-right: $paddingSide_xl;
+    }
+
+    @include lg {
+        padding-left: $paddingSide_lg;
+        padding-right: $paddingSide_lg;
+    }
+
+    @include md {
+        padding-left: $paddingSide_md;
+        padding-right: $paddingSide_md;
+    }
+
+    @include sm {
+        padding-left: $paddingSide_sm;
+        padding-right: $paddingSide_sm;
+    }
+}
+
+// >>> NEGATIVE SIDE MARGINS <<<
+// make content inside block-wrapper break out of it with paddingSide()
+@mixin marginOutSide {
+    margin-left: -$paddingSide;
+    margin-right: -$paddingSide;
+
+    @include xxxlm {
+        margin-left: -$paddingSide_xxxl;
+        margin-right: -$paddingSide_xxxl;
+    }
+    
+    @include xl {
+        margin-left: -$paddingSide_xl;
+        margin-right: -$paddingSide_xl;
+    }
+
+    @include lg {
+        margin-left: -$paddingSide_lg;
+        margin-right: -$paddingSide_lg;
+    }
+
+    @include md {
+        margin-left: -$paddingSide_md;
+        margin-right: -$paddingSide_md;
+    }
+
+    @include sm {
+        margin-left: -$paddingSide_sm;
+        margin-right: -$paddingSide_sm;
+    }
+}
+
+// >>> MIXINS FOR THE FONT STYLES <<<
+@mixin h1TitleFont {
+    font-family: $fontMain;
+    font-size: 76px;
+    line-height: 110%;
+    font-weight: 400;
+}
+@mixin lg_h1TitleFont {
+    font-family: $fontMain;
+    font-size: 56px;
+    line-height: 110%;
+    font-weight: 400;
+}
+@mixin md_h1TitleFont {
+    font-family: $fontMain;
+    font-size: 42px;
+    line-height: 110%;
+    font-weight: 400;
+}
+@mixin sm_h1TitleFont {
+    font-family: $fontMain;
+    font-size: 36px;
+    line-height: 110%;
+    font-weight: 400;
+}
+
+@mixin h4TitleFont {
+    font-family: $fontMain;
+    font-size: 24px;
+    line-height: 130%;
+    font-weight: 500;
+}
+
+@mixin subTitleFont {
+    font-family: $fontMain;
+    font-size: 20px;
+    line-height: 136%;
+    font-weight: 700;
+}
+
+@mixin mediumFont {
+    font-family: $fontMain;
+    font-size: 18px;
+    line-height: 140%;
+    font-weight: 400;
+}
+@mixin mediumSemiBoldFont {
+    @include mediumFont();
+    font-weight: 600;
+}
+@mixin mediumBoldFont {
+    @include mediumFont();
+    font-weight: 700;
+}
+
+@mixin averageFont {
+    font-family: $fontMain;
+    font-size: 16px;
+    line-height: 140%;
+    font-weight: 400;
+}
+@mixin averageMediumFont {
+    @include averageFont();
+    font-weight: 500;
+}
+@mixin averageSemiBoldFont {
+    @include averageFont();
+    font-weight: 600;
+}
+@mixin averageBoldFont {
+    @include averageFont();
+    font-weight: 700;
+}
+
+@mixin descrFont() {
+    font-family: $fontMain;
+    font-size: 14px;
+    line-height: 110%;
+    font-weight: 400;
+}
+@mixin descrMediumFont {
+    @include descrFont();
+    font-weight: 500;
+}
+@mixin descrSemiBoldFont {
+    @include descrFont();
+    font-weight: 600;
+}
+@mixin descrBoldFont {
+    @include descrFont();
+    font-weight: 700;
+}
+
+@mixin smallFont {
+    font-family: $fontMain;
+    font-size: 12px;
+    line-height: 136%;
+    font-weight: 400;
+}
+
+// >>> ADAPTIVE BREAKPOINTS <<<
+$break_xxxl: 1919px;
+$break_xxl: 1599px;
+$break_xl: 1439px;
+$break_lg: 1279px;
+$break_md: 1023px;
+$break_sm: 767px;
+$break_xs: 413px;
+$break_xxs: 374px;
+
+@mixin xxxl {
+    @media (max-width: #{$break_xxxl + 0.5}) {
+        @content;
+    }
+}
+  
+@mixin xxxlm {
+    @media (min-width: #{$break_xxxl + 1}) {
+        @content;
+    }
+}
+
+@mixin xxl {
+    @media (max-width: #{$break_xxl + 0.5}) {
+        @content;
+    }
+  }
+  
+@mixin xxlm {
+    @media (min-width: #{$break_xxl + 1}) {
+        @content;
+    }
+}
+
+@mixin xl {
+    @media (max-width: #{$break_xl + 0.5}) {
+        @content;
+    }
+}
+
+@mixin xlm {
+    @media (min-width: #{$break_xl + 1}) {
+        @content;
+    }
+}
+
+@mixin lg {
+    @media (max-width: #{$break_lg + 0.5}) {
+        @content;
+    }
+}
+
+@mixin lgm {
+    @media (min-width: #{$break_lg + 1}) {
+        @content;
+    }
+}
+
+@mixin md {
+    @media (max-width: #{$break_md + 0.5}) {
+        @content;
+    }
+}
+
+@mixin mdm {
+    @media (min-width: #{$break_md + 1}) {
+        @content;
+    }
+}
+
+@mixin sm {
+    @media (max-width: #{$break_sm + 0.5}) {
+        @content;
+    }
+}
+
+@mixin smm {
+    @media (min-width: #{$break_sm + 1}) {
+        @content;
+    }
+}
+
+@mixin xs {
+    @media (max-width: #{$break_xs + 0.5}) {
+        @content;
+    }
+}
+
+@mixin xsm {
+    @media (min-width: #{$break_xs + 1}) {
+        @content;
+    }
+}
+
+@mixin xxs {
+    @media (max-width: #{$break_xxs + 0.5}) {
+        @content;
+    }
+}
+
+@mixin xxsm {
+    @media (min-width: #{$break_xxs + 1}) {
+        @content;
+    }
+}
+
+@mixin hover {
+    @media (hover: hover) and (pointer: fine) {
+        @content;
+    }
+}
+
+@mixin no-hover {
+    @media (hover: none) {
+        @content;
+    }
+}
+
+// >>> FLEX-GAP <<<
+// *** mixin which breaks the set in the necessary amount of columns with correct gaps ***
+// ! apply it to the set item
+@mixin flex-set-item($cols, $col-gap, $row-gap) {
+    flex-basis: calc( (100% - #{$col-gap} * (#{$cols} - 1)) / #{$cols} );
+    margin-bottom: $row-gap;
+
+    &:not(:nth-child(#{$cols}n)) {
+        margin-right: $col-gap;
+    }
+}
+// due to weak support of gaps in flexbox in Safari and other shitty browsers
+// these are mixins which replace gap/column-gap/row-gap properties
+@mixin gap($right, $bottom) {
+    & > * {
+        margin: 0 $right $bottom 0;
+    }
+}
+@mixin column-gap($right) {
+    & > *:not(:last-child) {
+        margin: 0 $right 0 0;
+    }
+}
+@mixin row-gap($bottom) {
+    & > *:not(:last-child) {
+        margin: 0 0 $bottom 0;
+    }
+}
+
+@mixin column-margin($right) {
+    & > * {
+        margin: 0 $right 0 0;
+    }
+}
+@mixin row-margin($bottom) {
+    & > * {
+        margin: 0 0 $bottom 0;
+    }
+}
+
+@mixin remove-gap {
+    & > *:not(:last-child) {
+        margin: 0;
+    }
+}
+@mixin remove-margin {
+    & > * {
+        margin: 0;
+    }
+}

@@ -1,0 +1,141 @@
+.s-c {
+    padding-top: 80px;
+    padding-bottom: 200px;
+    
+    &__set {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 40px;
+
+        @include lg {
+            gap: 16px;
+        }
+        @include md {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 32px;
+        }
+        @include sm {
+            display: flex;
+            flex-direction: column;
+            @include row-gap(32px);
+            gap: 0;
+        }
+    }
+    &__item {
+        & > * {
+            height: 100%;
+        }
+    }
+}
+
+.card {
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+
+    &:hover {
+        .card__content {
+            opacity: 0;
+            transform: scale(0.85);
+        }
+        .card__hover {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
+    &__content {
+        background-color: $greyLight;
+        position: relative;
+
+        width: 100%;
+        height: 100%;
+        padding: 30px;
+
+        display: flex;
+        flex-direction: column;
+        
+        transition: transform 0.5s $ease, opacity 0.35s $ease;
+
+        @include lg {
+            padding: 16px;
+        }
+        @include md {
+            padding: 30px;
+        }
+    }
+    &__title {
+        @include h4TitleFont();
+        color: $blackMain;
+        text-align: center;
+
+        margin-bottom: 8px;
+
+        @include lg {
+            @include mediumFont();
+        }
+        @include md {
+            @include h4TitleFont();
+        }
+    }
+    &__image {
+        width: 80%;
+        margin: auto auto 0;
+    }
+    
+    &__hover {
+        background-color: $purple;
+
+        width: 100%;
+        height: 100%;
+        padding: 30px;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        display: flex;
+        flex-direction: column;
+
+        opacity: 0;
+        transform: scale(1.15);
+        transition: transform 0.5s $ease, opacity 0.35s $ease;
+
+        @include lg {
+            padding: 16px;
+        }
+        @include md {
+            padding: 30px;
+        }
+    }
+    &__descr {
+        flex: 1;
+
+        @include averageFont();
+        color: $white;
+
+        overflow: auto;
+        padding-right: 6px;
+
+        @include lg {
+            @include descrFont();
+        }
+        @include md {
+            @include averageFont();
+        }
+
+        &::-webkit-scrollbar {
+            width: 2px;
+        }
+        &::-webkit-scrollbar-thumb {
+            background-color: rgba($color: $white, $alpha: 0.6);
+            width: 2px;
+            border-radius: 8px;
+        }
+        &::-webkit-scrollbar-track {
+            background-color: rgba($color: $white, $alpha: 0.3);
+            width: 2px;
+            border-radius: 8px;
+        }
+    }
+}

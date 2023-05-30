@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    // transition: all 0.25s ease-out;
+    color: inherit;
+    text-decoration: none;
+    outline: none !important;
+  
+    &:active, &:hover, &:focus, &:visited {
+        outline: none;
+        text-decoration: none;
+    }
+  
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+[tabindex] {
+    outline: none;
+}
+
+h1, h2, h3, h4 {
+    span {
+        display: block;
+
+        &.inline {
+            display: inline;
+        }
+    }
+}
+
+ul {
+    list-style: none;
+}
+
+sup,
+sub {
+    line-height: 100%;
+}
+
+input, 
+textarea, 
+select, 
+button {
+    outline: none;
+    border: 1px solid transparent;
+    background-color: transparent;
+    font-size: 100%;
+}
+textarea {
+    resize: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+        
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+button {
+    cursor: pointer;
+}
+textarea, 
+input[type] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    -webkit-border-radius: 0;
+    border-radius: 0;
+}
+
+img, 
+svg {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+body {
+    font-family: $fontMain;
+    font-size: $fontSizeMain;
+    line-height: $lineHeightMain;
+    font-weight: $fontWeightMain;
+    color: $black;
+
+    position: relative;
+}
+
+.no-transitions * {
+    -webkit-transition: none !important;
+    -moz-transition: none !important;
+    -ms-transition: none !important;
+    -o-transition: none !important;
+    transition: none !important;
+}
+
+.body-wrapper {
+    position: relative;
+}
+
+.body-hidden {
+    overflow: hidden;
+}
+
+.block-wrapper {
+    @include maxWidth();
+    @include paddingSide();
+}
+
+.d-none {
+    display: none !important;
+}
+
+.mob-hide {
+    @include sm {
+        display: none !important;
+    }
+}
+
+// scrolltrigger data-reveal setup
+[data-batch],
+[data-reveal] {
+    opacity: 0;
+    will-change: transform;
+}
+
+// press footer to the page bottom
+html,
+body {
+    height: 100%;
+}
+.body-wrapper {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.main { 
+  flex: 1 1 auto;
+}
+
+// >> html document structure
+// html
+// .head
+// .body
+// ..body-wrapper
+// ...header
+// ...main
+// ...footer

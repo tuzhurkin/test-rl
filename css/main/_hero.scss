@@ -1,0 +1,84 @@
+.hero {
+    width: 100%;
+    min-height: 100vh;
+
+    &__wrapper {
+        height: 100%;
+
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 24px;
+
+        @include md {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    &__image-box {
+        min-height: 100%; // if text overflows -> extend the image's height
+        height: 100vh;    // fixed height to prevent overflow
+
+        display: flex;
+        justify-content: flex-end;
+
+        @include md {
+            min-height: 0;
+            height: auto;
+            display: block;
+
+            order: 2;
+        }
+    }
+    &__image {
+        flex: 0 0 50vw;
+        height: 100%;
+
+        @include md {
+            flex: 0 1 auto;
+            height: auto;
+            @include marginOutSide();
+        }
+    }
+    
+    &__block {
+        width: 75%;
+        margin: 0 auto;
+        padding: calc($headerHeight + 32px) 0 32px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        @include lg {
+            width: 90%;
+        }
+        @include md {
+            width: 80%;
+            order: 1;
+        }
+        @include sm {
+            width: 100%;
+        }
+    }
+    &__title {
+        @include h1TitleFont();
+        color: $blackMain;
+
+        margin-bottom: 32px;
+
+        @include lg {
+            @include lg_h1TitleFont();
+        }
+        @include md {
+            @include md_h1TitleFont();
+        }
+        @include sm {
+            @include sm_h1TitleFont();
+        }
+    }
+    &__descr {
+        @include mediumFont();
+        color: $blackMain;
+    }
+}
